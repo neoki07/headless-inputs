@@ -1,5 +1,3 @@
-# Web Components monorepo starter
+# Headless Inputs
 
-[![ci](https://github.com/neokidev/web-components-monorepo-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/neokidev/web-components-monorepo-starter/actions/workflows/ci.yml)
-
-A starter template for building multiple web components with TypeScript, Lit, and Turborepo.
+[![ci](https://github.com/neokidev/headless-inputs/actions/workflows/ci.yml/badge.svg)](https://github.com/neokidev/headless-inputs/actions/workflows/ci.yml)
