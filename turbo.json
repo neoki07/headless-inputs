@@ -1,0 +1,26 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "analyze": {
+      "dependsOn": ["^analyze"]
+    },
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "clean": {
+      "dependsOn": ["^clean"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "lint:eslint:fix": {
+      "dependsOn": ["^lint:eslint:fix"]
+    },
+    "test": {
+      "dependsOn": ["^test"]
+    },
+    "type-check": {
+      "dependsOn": ["^type-check"]
+    }
+  }
+}
