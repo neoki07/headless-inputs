@@ -1,5 +1,5 @@
 {
-  "extends": "@web-components-monorepo-starter/base-configs/tsconfig.base.json",
+  "extends": "@headless-inputs/base-configs/tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src"
