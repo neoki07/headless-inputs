@@ -19,9 +19,10 @@
   "scripts": {
     "analyze": "custom-elements-manifest analyze --litelement --globs \"src/**/*.ts\" --outdir dist",
     "analyze:watch": "custom-elements-manifest analyze --litelement --globs \"src/**/*.ts\" --outdir dist --watch",
-    "build": "tsc",
-    "build:watch": "tsc --watch",
+    "build": "npm run compile && npm run analyze",
     "clean": "rimraf dist",
+    "compile": "tsc",
+    "compile:watch": "tsc --watch",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint .",
     "lint:eslint:fix": "eslint --fix .",
