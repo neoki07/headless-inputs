@@ -11,7 +11,7 @@
     "@storybook/blocks": "^7.6.17",
     "@storybook/web-components": "^7.6.17",
     "@storybook/web-components-vite": "^7.6.17",
-    "@headless-inputs/hello-world": "*",
+    "@headless-inputs/text-input": "*",
     "storybook": "^7.6.17"
   }
 }
