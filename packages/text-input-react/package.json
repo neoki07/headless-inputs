@@ -1,5 +1,5 @@
 {
-  "name": "@headless-inputs/hello-world-react",
+  "name": "@headless-inputs/text-input-react",
   "version": "0.0.0",
   "private": true,
   "description": "A React component with TypeScript and Lit",
@@ -10,22 +10,21 @@
     "lit"
   ],
   "type": "module",
-  "main": "dist/hello-world.js",
-  "module": "dist/hello-world.js",
-  "types": "dist/hello-world.d.ts",
+  "main": "dist/text-input.js",
+  "module": "dist/text-input.js",
+  "types": "dist/text-input.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "npm run compile",
-    "clean": "rimraf dist",
-    "compile": "tsc",
-    "compile:watch": "tsc --watch"
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "@lit/react": "^1.0.3",
     "@headless-inputs/base-configs": "*",
-    "@headless-inputs/hello-world": "*"
+    "@headless-inputs/text-input": "*"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",
