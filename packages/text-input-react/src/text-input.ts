@@ -18,6 +18,6 @@ export const TextInput = createComponent({
   react: React,
   tagName: 'text-input',
   elementClass: TextInputWC,
-  displayName: 'HellWorld',
+  displayName: 'TextInput',
   events: { onChange: 'input' },
 }) as React.ForwardRefExoticComponent<TextInputProps>
