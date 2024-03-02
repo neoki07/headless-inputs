@@ -144,4 +144,14 @@ describe('integer-input', () => {
     expect(integerInput.value).toBe(null)
     expect(shadowInput.value).toBe('')
   })
+
+  it('ignores non-integer value when property is directly updated via JavaScript', async () => {
+    document.body.innerHTML = '<integer-input></integer-input>'
+    await customElements.whenDefined('integer-input')
+
+    const integerInput = document.body.querySelector('integer-input')!
+    integerInput.value = 2.5
+
+    expect(integerInput.value).toBe(null)
+  })
 })

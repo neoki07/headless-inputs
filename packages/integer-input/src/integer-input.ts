@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 @customElement('integer-input')
 export class IntegerInput extends LitElement {
+  private _value: number | null = null
   private previousInputValue: string = ''
 
   @property()
@@ -17,22 +18,30 @@ export class IntegerInput extends LitElement {
       return Number(value)
     },
   })
-  value: number | null = null
+  set value(value: number | null) {
+    if (value === null || value.toString().match(/^-?\d+$/)) {
+      this._value = value
+    }
+  }
+
+  get value() {
+    return this._value
+  }
 
   override willUpdate(changedProperties: PropertyValues<this>) {
     if (changedProperties.has('value')) {
-      this.previousInputValue = this.value?.toString() || ''
+      this.previousInputValue = this._value?.toString() || ''
     }
   }
 
   private handleInput(event: Event) {
     const inputElement = event.target as HTMLInputElement
     if (inputElement.value === '') {
-      this.value = null
+      this._value = null
     }
 
     if (inputElement.value.match(/^-?\d+$/)) {
-      this.value = Number(inputElement.value)
+      this._value = Number(inputElement.value)
     }
 
     if (inputElement.value === '' || inputElement.value.match(/^-?\d*$/)) {
@@ -51,7 +60,7 @@ export class IntegerInput extends LitElement {
 
   override render() {
     return html`<input
-      .value=${this.value?.toString() ?? ''}
+      .value=${this._value?.toString() ?? ''}
       @input=${this.handleInput}
       @blur=${this.handleBlur}
     />`
