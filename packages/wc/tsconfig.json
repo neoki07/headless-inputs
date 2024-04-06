@@ -1,0 +1,8 @@
+{
+  "extends": "@headless-inputs/base-configs/tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "outDir": "dist"
+  },
+  "include": ["src", ".storybook/**/*", "vitest.config.ts"]
+}
