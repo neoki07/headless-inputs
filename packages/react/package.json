@@ -1,0 +1,57 @@
+{
+  "name": "@headless-inputs/react",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "react",
+    "web-components",
+    "typescript",
+    "lit"
+  ],
+  "license": "MIT",
+  "author": "neoki",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rimraf dist",
+    "lint": "eslint .",
+    "lint:eslint:fix": "eslint --fix .",
+    "lint:fix": "npm run lint:eslint:fix",
+    "storybook": "storybook dev -p 7007",
+    "storybook:build": "storybook build",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "@lit/react": "^1.0.4",
+    "headless-inputs": "0.0.0"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.3.1",
+    "@headless-inputs/base-configs": "*",
+    "@headless-inputs/eslint-config": "*",
+    "@storybook/addon-essentials": "^8.0.6",
+    "@storybook/addon-interactions": "^8.0.6",
+    "@storybook/addon-links": "^8.0.6",
+    "@storybook/addon-onboarding": "^8.0.6",
+    "@storybook/blocks": "^8.0.6",
+    "@storybook/react": "^8.0.6",
+    "@storybook/react-vite": "^8.0.6",
+    "@storybook/test": "^8.0.6",
+    "eslint": "^8.57.0",
+    "rimraf": "^5.0.5",
+    "storybook": "^8.0.6",
+    "typescript": "^5.4.4"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
