@@ -33,9 +33,9 @@ describe('integer-input', () => {
     await customElements.whenDefined('integer-input')
 
     const integerInput = document.body.querySelector('integer-input')!
-    const shadowInput = integerInput!.shadowRoot!.querySelector('input')!
+    const innerInput = integerInput.querySelector('input')!
     expect(integerInput.value).toBe(null)
-    expect(shadowInput.value).toBe('')
+    expect(innerInput.value).toBe('')
   })
 
   it('ignores standalone minus sign by property', async () => {
@@ -43,9 +43,9 @@ describe('integer-input', () => {
     await customElements.whenDefined('integer-input')
 
     const integerInput = document.body.querySelector('integer-input')!
-    const shadowInput = integerInput!.shadowRoot!.querySelector('input')!
+    const innerInput = integerInput.querySelector('input')!
     expect(integerInput.value).toBe(null)
-    expect(shadowInput.value).toBe('')
+    expect(innerInput.value).toBe('')
   })
 
   it('updates value on user input', async () => {
@@ -55,8 +55,8 @@ describe('integer-input', () => {
     await customElements.whenDefined('integer-input')
 
     const integerInput = document.body.querySelector('integer-input')!
-    const shadowInput = integerInput!.shadowRoot!.querySelector('input')!
-    await user.type(shadowInput, '5')
+    const innerInput = integerInput.querySelector('input')!
+    await user.type(innerInput, '5')
 
     expect(integerInput.value).toBe(5)
   })
@@ -68,8 +68,8 @@ describe('integer-input', () => {
     await customElements.whenDefined('integer-input')
 
     const integerInput = document.body.querySelector('integer-input')!
-    const shadowInput = integerInput!.shadowRoot!.querySelector('input')!
-    await user.type(shadowInput, '7')
+    const innerInput = integerInput.querySelector('input')!
+    await user.type(innerInput, '7')
 
     expect(integerInput.value).toBe(57)
   })
@@ -81,11 +81,11 @@ describe('integer-input', () => {
     await customElements.whenDefined('integer-input')
 
     const integerInput = document.body.querySelector('integer-input')!
-    const shadowInput = integerInput!.shadowRoot!.querySelector('input')!
-    await user.type(shadowInput, 'a')
+    const innerInput = integerInput.querySelector('input')!
+    await user.type(innerInput, 'a')
 
     expect(integerInput.value).toBe(5)
-    expect(shadowInput.value).toBe('5')
+    expect(innerInput.value).toBe('5')
   })
 
   it('reflects standalone minus sign input', async () => {
@@ -95,11 +95,11 @@ describe('integer-input', () => {
     await customElements.whenDefined('integer-input')
 
     const integerInput = document.body.querySelector('integer-input')!
-    const shadowInput = integerInput!.shadowRoot!.querySelector('input')!
-    await user.type(shadowInput, '-')
+    const innerInput = integerInput.querySelector('input')!
+    await user.type(innerInput, '-')
 
     expect(integerInput.value).toBe(null)
-    expect(shadowInput.value).toBe('-')
+    expect(innerInput.value).toBe('-')
   })
 
   it('prevents entering more than one minus sign', async () => {
@@ -109,11 +109,11 @@ describe('integer-input', () => {
     await customElements.whenDefined('integer-input')
 
     const integerInput = document.body.querySelector('integer-input')!
-    const shadowInput = integerInput!.shadowRoot!.querySelector('input')!
-    await user.type(shadowInput, '--')
+    const innerInput = integerInput.querySelector('input')!
+    await user.type(innerInput, '--')
 
     expect(integerInput.value).toBe(null)
-    expect(shadowInput.value).toBe('-')
+    expect(innerInput.value).toBe('-')
   })
 
   it('prevents entering minus sign anywhere except at the beginning', async () => {
@@ -123,11 +123,11 @@ describe('integer-input', () => {
     await customElements.whenDefined('integer-input')
 
     const integerInput = document.body.querySelector('integer-input')!
-    const shadowInput = integerInput!.shadowRoot!.querySelector('input')!
-    await user.type(shadowInput, '-')
+    const innerInput = integerInput.querySelector('input')!
+    await user.type(innerInput, '-')
 
     expect(integerInput.value).toBe(5)
-    expect(shadowInput.value).toBe('5')
+    expect(innerInput.value).toBe('5')
   })
 
   it('resets input to null if only minus sign is present on blur', async () => {
@@ -137,12 +137,12 @@ describe('integer-input', () => {
     await customElements.whenDefined('integer-input')
 
     const integerInput = document.body.querySelector('integer-input')!
-    const shadowInput = integerInput!.shadowRoot!.querySelector('input')!
-    await user.type(shadowInput, '-')
-    shadowInput.blur()
+    const innerInput = integerInput.querySelector('input')!
+    await user.type(innerInput, '-')
+    innerInput.blur()
 
     expect(integerInput.value).toBe(null)
-    expect(shadowInput.value).toBe('')
+    expect(innerInput.value).toBe('')
   })
 
   it('ignores non-integer value when property is directly updated via JavaScript', async () => {
