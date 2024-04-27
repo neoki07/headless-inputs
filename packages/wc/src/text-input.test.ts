@@ -27,8 +27,8 @@ describe('text-input', () => {
     await customElements.whenDefined('text-input')
 
     const textInput = document.body.querySelector('text-input')!
-    const shadowInput = textInput!.shadowRoot!.querySelector('input')!
-    await user.type(shadowInput, 'Test')
+    const innerInput = textInput.querySelector('input')!
+    await user.type(innerInput, 'Test')
 
     expect(textInput.value).toBe('Test')
   })

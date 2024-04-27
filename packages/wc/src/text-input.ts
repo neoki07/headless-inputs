@@ -1,8 +1,9 @@
-import { LitElement, html } from 'lit'
+import { html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { LitLightDomElement } from './light-dom.js'
 
 @customElement('text-input')
-export class TextInput extends LitElement {
+export class TextInput extends LitLightDomElement {
   @property()
   name: string = ''
 

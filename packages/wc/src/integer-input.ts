@@ -1,8 +1,9 @@
-import { html, LitElement, PropertyValues } from 'lit'
+import { html, PropertyValues } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { LitLightDomElement } from './light-dom.js'
 
 @customElement('integer-input')
-export class IntegerInput extends LitElement {
+export class IntegerInput extends LitLightDomElement {
   private _value: number | null = null
   private previousInputValue: string = ''
 
